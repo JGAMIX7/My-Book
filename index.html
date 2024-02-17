@@ -417,10 +417,39 @@
                   </figure>
                </a>
             </li>
-
          </ul>
       </section>
    </main>
 
+   <!-- ====== Footer ====== -->
+   <footer class="footer"></footer>
+
+
+   <div class="preloader">
+      <div class="preloader__title">
+         <h1 class="preloader-logo">My Book</h1>
+         <h3 class="preloader-subtitle">Jamel Agricole</h3>
+      </div>
+   </div>
+
+   <!-- ====== Preloader ====== -->
+   <script>
+      function hidePreloaderAfterDelay() {
+         setTimeout(() => {
+            // Masque le preloader du DOM
+            document.querySelector(".preloader").style.display = "none";
+         }, 5000); // Délai de 4 secondes (en millisecondes)
+      }
+
+      window.addEventListener("load", () => {
+         document.body.classList.add("loaded");
+         hidePreloaderAfterDelay();
+      });
+
+      // window.addEventListener("scroll", () => {
+      //   const scrollPosition = window.scrollY;
+      //   console.log("Position de défilement (scroll) : ", scrollPosition);
+      // });
+   </script>
   </body>
 </html>
