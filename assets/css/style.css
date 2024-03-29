@@ -53,6 +53,8 @@ img{
 
 /* ========== Header ========== */
 .header {
+   display: none;
+
    position: fixed;
    top: 0;
    left: 0;
@@ -142,7 +144,7 @@ figure {
    justify-content: center;
    align-items: center;
    text-align: center;
-   transition: opacity 1s 3s ease; 
+   transition: opacity 0.5s 1s ease; 
 }
 
 .preloader-logo,
@@ -170,11 +172,11 @@ figure {
    width: 100%;
    height: 100%;
    background-color: var(--black);
-   transition: all 1s;
+   transition: all 0.7s;
 }
 
 .preloader-subtitle::after{
-   transition: all 1s 1s;
+   transition: all 1s;
 }
 
 .loaded .preloader-logo::after,
@@ -184,13 +186,13 @@ figure {
 
 .header {
    opacity: 0; 
-   transition: opacity 1s 4.5s ease; 
+   transition: opacity 1s 2.25s ease; 
 }
 
 main {
    margin-top: 50%;
    opacity: 0; 
-   transition: all 2s 5.5s ease;
+   /* transition: all 1s 2.5s ease; */
 }
 
 .loaded .preloader {
@@ -204,4 +206,55 @@ main {
 .loaded main {
    margin-top: 0;
    opacity: 1;
+}
+
+.modal {
+   position: fixed;
+   z-index: 3;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0,0,0,0.7);
+   /* filter: blur(8px); */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.box {
+   z-index: 5;
+   max-width: 1000px;
+   height: 600px;
+   background-color: var(--black);
+   display: flex;
+
+}
+
+.box-left{
+   width: 500px;
+   height: 350px;
+   margin: auto;
+}
+
+.box-right{
+   width: 40%;
+   margin: auto;
+   background: green;
+}
+
+.box-title {
+   font-size: 32px;
+}
+
+.box-desc {
+   margin: 20px 0;
+}
+
+.box-btn{
+   display: inline-block;
+   padding: 10px 20px;
+   border-radius: 20px;
+   border: 3px solid white;
+   color: white;
 }
