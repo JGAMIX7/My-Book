@@ -21,6 +21,14 @@
   </head>
 
   <body>
+   <!-- ====== Loader ===== -->
+   <div class="preloader">
+      <div class="preloader__title">
+         <h1 class="preloader-logo">My Book</h1>
+         <h3 class="preloader-subtitle">Jamel Agricole</h3>
+      </div>
+   </div>
+
    <!-- ====== Header ====== -->
    <header class="header">
       <div class="header__title">
@@ -33,6 +41,50 @@
       <!-- ====== Mes créastions personnelles ====== -->
       <section class="section first-section">
          <h2 class="section-title">Créations personnelles</h2>
+
+         <!-- <div class="modal" id="modal">
+            <div class="box">
+               <div class="close" id="close">
+                  <img src="assets/images/close.svg" alt="close button">
+               </div>
+               <?php
+                  if (isset($_GET["projet"]) && $_GET["projet"] != "") {
+                     $lecteur = new SplFileObject("assets/csv/personnelle.csv", 'r');
+                     while ($lecteur->eof() == false) {
+                        $ligne = $lecteur->fgets();
+                        $nbLigne = $lecteur->key();
+                        if (($ligne != "") && ($nbLigne == $_GET["projet"])){
+                           $tab = explode(";", $ligne);
+                           $content = $tab[0];
+                           $titre = $tab[1];
+                           $desc = $tab[2];
+                           $link = $tab[3];
+               ?>
+                           <div class="box-left">
+                              <img src="" alt="">
+                              <?php echo($content); ?>
+                           </div>
+
+                           <div class="box-right">
+                              <h3 class="box-title"><?php echo($titre); ?> Titre du projet</h3>
+                              <p class="box-desc">
+                                 <?php echo($desc); ?> 
+                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                 ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                                 laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate 
+                                 velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+                                 sunt in culpa qui officia deserunt mollit anim id est laborum. 
+                              </p>
+
+                              <a href="" class="box-btn">Voir le site</a>
+                           </div>
+               <?php
+                        }
+                     }
+                  }
+               ?>
+            </div>
+         </div> -->
 
          <ul class="section-content">
             <li class="content">
@@ -462,14 +514,6 @@
 
    <!-- ====== Footer ====== -->
    <footer class="footer"></footer>
-
-
-   <div class="preloader">
-      <div class="preloader__title">
-         <h1 class="preloader-logo">My Book</h1>
-         <h3 class="preloader-subtitle">Jamel Agricole</h3>
-      </div>
-   </div>
 
    <!-- ====== Preloader ====== -->
    <script>
